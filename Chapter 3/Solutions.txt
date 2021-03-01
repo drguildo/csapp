@@ -1,0 +1,35 @@
+Practice Problem 3.1
+--------------------
+
+Operand        | Value
+----------------------
+%rax           | 0x100
+0x104          |  0xAB
+$0x108         | 0x108
+(%rax)         |  0xFF
+4(%rax)        |  0xAB
+9(%rax,%rdx)   |  0x11
+260(%rcx,%rdx) |  0x13
+0xFC(,%rcx,4)  |  0xFF
+(%rax,%rdx,4)  |  0x11
+
+Practice Problem 3.2
+--------------------
+
+movl %eax, (%rsp)
+movw (%rax), %dx
+movb $0xFF, %bl
+movb (%rsp,%rdx,4), %dl
+movq (%rdx), %rax
+movw %dx, (%rax)
+
+Practice Problem 3.3
+--------------------
+
+movb $0xF, (%ebx) - The source isn't a valid immediate value.
+movl %rax, (%rsp) - Instruction operates on 4-bytes, %rax is 8-bytes.
+movw (%rax), 4(%rsp) - Both source and destination are memory locations.
+movb %al, %sl - Destination is not a valid register.
+movq %rax, $0x123 - Destination is an immediate value.
+movl %eax, %rdx
+movb %si, 8(%rbp) - Instruction operates on 1-byte, %si is 2-bytes.
