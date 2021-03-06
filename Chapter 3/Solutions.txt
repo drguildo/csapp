@@ -26,10 +26,10 @@ movw %dx, (%rax)
 Practice Problem 3.3
 --------------------
 
-movb $0xF, (%ebx) - The source isn't a valid immediate value.
-movl %rax, (%rsp) - Instruction operates on 4-bytes, %rax is 8-bytes.
+movb $0xF, (%ebx) - (%ebx) is not a 64-bit address.
+movl %rax, (%rsp) - Instruction operates on 4 bytes, %rax is 8 bytes.
 movw (%rax), 4(%rsp) - Both source and destination are memory locations.
 movb %al, %sl - Destination is not a valid register.
-movq %rax, $0x123 - Destination is an immediate value.
-movl %eax, %rdx
-movb %si, 8(%rbp) - Instruction operates on 1-byte, %si is 2-bytes.
+movq %rax, $0x123 - Destination is an immediate value. Should be ($0x123).
+movl %eax, %rdx - Instruction operates on 4 bytes, %rdx is 8 bytes.
+movb %si, 8(%rbp) - Instruction operates on 1 byte, %si is 2 bytes.
