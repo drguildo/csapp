@@ -35,3 +35,9 @@ j hexadecimal 0s.
 8 = 2^3 = 2^(3+4*0)
 1000
 0x8
+
+Compiling and dumping
+---------------------
+
+Compiling C code without a main function: gcc -c foo.c
+Dumping compiled code: objdump -d foo.o
