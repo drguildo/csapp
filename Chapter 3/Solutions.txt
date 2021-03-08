@@ -53,3 +53,16 @@ unsigned      | unsigned char | movl (%rdi), %eax
               |               | movb %al (%rsi)
 char          | short         | movsbw (%rdi), %ax
               |               | movw %ax (%rsi)
+
+Practice Problem 3.5
+--------------------
+
+void decode1(long *xp, long *yp, long *zp) {
+	// xp = %rdi, yp = %rsi, zp = %rdx
+	long x = *xp;
+	long y = *yp;
+	long z = *zp;
+	*yp = x;
+	*zp = y;
+	*xp = z;
+}
