@@ -66,3 +66,19 @@ void decode1(long *xp, long *yp, long *zp) {
 	*zp = y;
 	*xp = z;
 }
+
+Practice Problem 3.6
+--------------------
+
+%rbx holds value p and %rdx holds value q
+
+A(B, C, D) = M[A + B + C*D]
+
+Instruction               | Result
+----------------------------------
+leaq 9(%rdx), %rax        | 9 + q
+leaq (%rdx,%rbx), %rax    | q + p
+leaq (%rdx,%rbx,3), %rax  | q + 3 * p
+leaq 2(%rbx,%rbx,7), %rax | 2 + p * 8
+leaq 0xE(,%rdx,3), %rax   | 0xE + q * 3
+leaq 6(%rbx,%rdx,7), %rax | 6 + p + q * 7
